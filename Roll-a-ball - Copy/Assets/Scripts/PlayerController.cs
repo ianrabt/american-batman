@@ -9,50 +9,49 @@ public class PlayerController : MonoBehaviour
     private int count;
     public Text countText;
     public Text winText;
-    public bool grounded = true;
-    public float jumpPower = 100;
-
-    public float rotationSpeed = 5;
-    public float direction = 0;
-
+    public bool grounded = false;
+    public float jumpPower;
     private CharacterController controller;
-    private float speed = 6;
-    private float turnSpeed = 90;
+    private float speed = 5;
 
     void Start()
     {
-        rb = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        Camera cam = Camera.main;
         count = 0;
         setCountText();
         winText.text = "";
     }
 
-    void onCollissionEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("ground"))
+        if (collision.gameObject.tag == "ground")
         {
             grounded = true;
         }
     }
-
-    void FixedUpdate()
+        void FixedUpdate()
     {
-        // float moveHorizontal = Input.GetAxis("Horizontal");
-        // float moveVertical = Input.GetAxis("Vertical");
-        // Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        //rb.AddForce(movement * speed);
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 moveDir = new Vector3(0.0f, 0.0f, 0.0f);
+        Vector3 movement = new Vector3();
+        movement = Camera.main.transform.right * moveHorizontal + Camera.main.transform.forward * moveVertical;
+        movement += (Physics.gravity * Time.deltaTime * (float) 8.0);
 
-        transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
-        movDir = transform.forward * Input.GetAxis("Vertical") * speed;
-        controller.Move(movDir * Time.deltaTime - Vector3.up * 0.1);
-
-        if (Input.GetKeyDown("space") && grounded == true)
+        if (Input.GetKeyDown("space") && grounded)
         {
-            Vector3 jumpVector = new Vector3(0.0f, jumpPower, 0.0f);
-            rb.AddForce(jumpVector);
+            movement.y = jumpPower;
         }
+
+        controller.Move(movement * Time.deltaTime);
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Cursor.visible = true;
+        }
+
+        
     }
 
     void OnTriggerEnter(Collider other)
