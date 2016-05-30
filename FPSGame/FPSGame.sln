@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSGame.CSharp.Plugins", "FPSGame.CSharp.Plugins.csproj", "{E1308C0B-B7F8-DCB1-336D-CDB59FF23EC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSGame.CSharp", "FPSGame.CSharp.csproj", "{29629F00-9FFD-25CA-4AE1-D4CDB1AAEB58}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSGame.CSharp.Editor", "FPSGame.CSharp.Editor.csproj", "{1534AE6C-1540-F56B-2829-1C6B09905B6E}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{E1308C0B-B7F8-DCB1-336D-CDB59FF23EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1308C0B-B7F8-DCB1-336D-CDB59FF23EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1308C0B-B7F8-DCB1-336D-CDB59FF23EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29629F00-9FFD-25CA-4AE1-D4CDB1AAEB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29629F00-9FFD-25CA-4AE1-D4CDB1AAEB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29629F00-9FFD-25CA-4AE1-D4CDB1AAEB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29629F00-9FFD-25CA-4AE1-D4CDB1AAEB58}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1534AE6C-1540-F56B-2829-1C6B09905B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1534AE6C-1540-F56B-2829-1C6B09905B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1534AE6C-1540-F56B-2829-1C6B09905B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
