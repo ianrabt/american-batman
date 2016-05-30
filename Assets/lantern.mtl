@@ -1,9 +1,10 @@
-newmtl objMesh Merged Material
-Ka 0.000000 0.000000 0.000000
-Kd 0.803922 0.803922 0.803922
-Ks 0.200000 0.200000 0.200000
-Ns 6.062867
-d 1.000000
-Tr 0.000000
-map_Kd objMesh Merged Diffuse Texture0000.psd 
+# Blender MTL File: 'lantern.blend'
+# Material Count: 1
 
+newmtl None
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
