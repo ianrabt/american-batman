@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -41,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        public Text note;
+        public string[] notes;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +58,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            note = GetComponentInChildren<Text>();
+            note.text = "";
         }
 
 
@@ -259,9 +264,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("pickup"))
+            if (other.gameObject.CompareTag("note"))
             {
-                
+                TextAsset noteText = (TextAsset) UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/notes/" + other.gameObject.name + ".txt", typeof (TextAsset));
+                note.text = noteText.text;
+            }
+        }
+        void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("note"))
+            {
+                note.text = "";
             }
         }
 
