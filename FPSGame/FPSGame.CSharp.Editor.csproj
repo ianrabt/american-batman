@@ -124,6 +124,10 @@
       <Project>{E1308C0B-B7F8-DCB1-336D-CDB59FF23EC4}</Project>
       <Name>FPSGame.CSharp.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="FPSGame.CSharp.csproj">
+      <Project>{29629F00-9FFD-25CA-4AE1-D4CDB1AAEB58}</Project>
+      <Name>FPSGame.CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
